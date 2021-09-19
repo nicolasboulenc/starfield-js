@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<title>.: Star Field :.</title>
+		<style>
+			body {
+				font-family: consolas;
+				overflow: hidden;
+				padding: 0;
+				margin: 0;
+				height: 100vh;
+			}
+			canvas {
+				width: 100vw;
+				height: 100vh;
+				background-color: transparent;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.panel {
+				position: absolute;
+				background-color: rgba(0 0 0 / 0.9);
+				top: 0;
+				left: 0;
+				font-size: 1em;
+				color: white;
+				padding: 0.5em;
+			}
+			.info {
+				margin-bottom: 1em;
+			}
+			input {
+				display: block;
+				margin-bottom: 1em;
+			}
+			button {
+				font-family: consolas;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="display"></canvas>
+		<div class="panel">
+			<div class="info"><div id="info"></div></div>
+			<div class="params">
+				<label id="speed_label" for="star_speed">speed</label>
+				<input class="star" id="speed" type="range" value="100" min="0" max="1000" step="10" />
+
+				<label id="star_display_label" for="star_display">star_display</label>
+				<input class="star" id="star_display" type="range" value="1" min="0" max="1" step="1" />
+
+				<label id="star_size_label" for="star_size">star_size</label>
+				<input class="star" id="star_size" type="range" value="4" min="0" max="100" step="2" />
+
+				<label id="star_saturation_label" for="star_saturation">star_saturation</label>
+				<input class="star" id="star_saturation" type="range" value="30" min="0" max="100" step="5" />
+
+
+				<label id="trail_display_label" for="trail_display">trail_display</label>
+				<input class="trail" id="trail_display" type="range" value="1" min="0" max="1" step="1" />
+
+				<label id="trail_size_offset_label" for="trail_size_offset">trail_size_offset</label>
+				<input class="trail" id="trail_size_offset" type="range" value="0" min="-100" max="100" step="2" />
+
+				<label id="trail_length_label" for="trail_length">trail_length</label>
+				<input class="trail" id="trail_length" type="range" value="200" min="0" max="500" step="10" />
+
+				<label id="trail_saturation_label" for="trail_saturation">trail_saturation</label>
+				<input class="star" id="trail_saturation" type="range" value="30" min="0" max="100" step="5" />
+
+				<label id="trail_gradient_label" for="trail_gradient">trail_gradient</label>
+				<input class="trail" id="trail_gradient" type="range" value="1" min="0" max="1" step="1" />
+
+				<label id="trail_end_label" for="trail_cap">trail_end</label>
+				<input class="trail" id="trail_end" type="range" value="1" min="0" max="1" step="1" />
+
+
+				<label id="space_population_label" for="space_population">space_population</label>
+				<input class="space" id="space_population" type="range" value="300" min="100" max="1000" step="100" />
+
+				<label id="space_depth_label" for="space_depth">space_depth</label>
+				<input class="space" id="space_depth" type="range" value="5000" min="1000" max="10000" step="1000" />
+
+				<button id="reset">Reset</button>
+			</div>
+		</div>
+		<script src="app.js"></script>
+		<script src="star-field.js"></script>
+	</body>
+</html>
